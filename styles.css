@@ -1,0 +1,152 @@
+/* General reset and background setup */
+body, html {
+    padding: 0;
+    margin: 0;
+    background-color: aliceblue;
+}
+
+/* Globally hide the scrollbar for any element, including the playback speed controller */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Styling for the main container that holds the video player and controls */
+.container {
+    width: 60%;
+    box-shadow: 0 0 15px 5px rgba(173, 216, 230, 0.485);
+    background-color: white;
+    padding-top: 3px;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 5px;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: grey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Video player section */
+.video-player {
+    text-align: center;
+}
+
+#myVideo {
+    height: 100%;
+    width: 90%;
+    border-radius: 5px;
+}
+
+/* Control bar styling */
+.controls {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+/* Right-hand side controls (e.g., settings) */
+.controls-right {
+    display: flex;
+}
+
+/* Speed control dropdown menu styling */
+.speed-controls {
+    background-color: white;
+    border: 1px solid lightgrey;
+    display: none;
+    width: auto;
+    height: 100px;
+    overflow: scroll;
+    padding: 0;
+    flex-direction: column;
+    padding: 5px;
+    position: absolute;
+}
+
+.speed-controls button {
+    border-bottom: 2px solid rgba(211, 211, 211, 0.338);
+    padding: 5px;
+}
+
+/* Styling for the playback speed icon inside the button */
+.playback-speed-icon {
+    height: 20px;
+    position: relative;
+    top: 4px;
+    margin-right: 3px;
+}
+
+/* Header within speed controls */
+.speed-controls p {
+    margin: 0;
+    padding-bottom: 15px;
+    border-bottom: 3px solid rgba(211, 211, 211, 0.533);
+    font-weight: 600;
+    color: grey;
+}
+
+/* General button styling */
+button {
+    border: none;
+    background-color: transparent; /* Use transparent instead of specific color code for clarity */
+    cursor: pointer;
+    color: grey;
+}
+
+button:active {
+    background-color: lightgray;
+}
+
+button i {
+    color: #535353;
+    font-size: 1rem;
+}
+
+/* Rotation effect for settings button */
+.rotate {
+    transform: rotate(-45deg);
+}
+
+/* Style definitions for the video and volume progress bars */
+.progress-container {
+    position: relative;
+    width: 90%;
+    height: 10px;
+    margin: auto;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+/* Volume control popup styling */
+.volume-progress {
+    position: absolute;
+    bottom: calc(100% + 5px); /* Position it just below the volume button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    display: none; /* Initially hidden */
+}
+
+.volume-bar {
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 4px;
+}
