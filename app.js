@@ -9,6 +9,7 @@ const progressBar = document.getElementById('progress-bar');
 const settings = document.querySelector('#settings-btn');
 const speedControlDropdown = document.querySelector('.speed-controls')
 const speedControls = document.querySelectorAll('.speed-controls button');
+const playbackSpeed = document.querySelector('.playback-speed')
 
 // Event listeners for play and pause functionality
 video?.addEventListener('click', playPauseVideo);
@@ -88,5 +89,10 @@ speedControls.forEach(control => {
     control.addEventListener('click', () => {
         const speed = parseFloat(control.dataset.speed);
         video.playbackRate = speed;
+        if (speed !== 1) {
+            playbackSpeed.textContent = speed;
+        } else {
+            playbackSpeed.textContent = '';
+        }
     });
 });
